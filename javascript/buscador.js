@@ -14,9 +14,7 @@ class Buscador{
             let self = this;
             $.get(self.urls[i], function(datos){
                 valor = self.urls[i] === "index.html" ? self.get_todo_contenido(datos) : self.get_main(datos);
-                console.log(valor)
                 contenido.set(self.urls[i], valor);
-                console.log(contenido)
             });
         }
         return contenido;
@@ -77,7 +75,6 @@ class Buscador{
 
     buscar(){
         let buscador = $("#buscador").val().toLowerCase();
-        console.log(this.contenido.get("index.html"))
         let num_educacion = this.contenido.get("index.html").split(buscador).length - 1;
         let num_experiencia = this.contenido.get("experiencia_profesional.html").split(buscador).length - 1;
         let num_aficiones = this.contenido.get("aficiones.html").split(buscador).length - 1;
