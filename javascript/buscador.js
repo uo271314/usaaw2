@@ -53,9 +53,9 @@ class Buscador{
             abierto = datos[i] != "/" && datos[i] != "<" && datos[i>0?i-1:0] == "<" || abierto && datos[i] != ">";
 
             if(estado_anterior && !abierto && etiqueta.trim().length > 0){
-                let valor = etiquetas.get(etiqueta) === "undefined" ? 1 : etiquetas.get(etiqueta) + 1;
-                etiquetas.set(etiqueta, valor);
-                resultado.push(this.get_dato(etiqueta, datos, valor));
+                let valor = etiquetas.get(etiqueta.trim()) === "undefined" ? 1 : etiquetas.get(etiqueta.trim()) + 1;
+                etiquetas.set(etiqueta.trim(), valor);
+                resultado.push(this.get_dato(etiqueta.trim(), datos, valor));
 
                 etiqueta = "";
                 abierto = false;
