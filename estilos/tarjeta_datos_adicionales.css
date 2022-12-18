@@ -1,0 +1,28 @@
+/* Especificidad 002 */
+main > section {
+    background-color: #f1f0f4; 
+    /* color: definido en el body y heredado */
+    border-radius: 1.5em;
+    border-top: 0.1em solid #222a35;
+    border-right: 0.1em solid #222a35;
+    border-left: 0.1em solid #222a35;
+    border-bottom: 0.4em solid #222a35;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tratamiento de la lista */
+/* Especificidad 004 */
+main > section > ul > li {
+    list-style-type: none;
+    padding-bottom: 0.8em;
+}
+
+/* Especificidad 004 */
+main > section > ul > li > * {
+    display: inline;
+    vertical-align: middle;
+}

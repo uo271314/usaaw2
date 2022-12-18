@@ -1,0 +1,64 @@
+/* Especificidad 002 */
+main > article {
+    background-color: #f1f0f4; 
+    /* color: definido en el body y heredado */
+    border-radius: 1.5em;
+    border-top: 0.1em solid #222a35;
+    border-left: 0.1em solid #222a35;
+    border-right: 0.1em solid #222a35;
+    border-bottom: 0.4em solid #222a35;
+    padding-bottom: 1.2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    text-align: justify;
+}
+
+/* Especificidad 003 */
+main > article > p {
+    padding-bottom: 0.9em;
+}
+
+/* Especificidad 004 */
+main > article > h3::first-letter {
+    font-size: 1.7em;
+}
+
+/* Flexbox multimedia */
+/* Especificidad 003 */
+main > article > section {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #8497b0;
+    /* color: definido en el body y heredado */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1.5em;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    border: 0.1em solid #222a35;
+}
+
+/* Especificidad 004 */
+main > article > section > img {
+    width: 17%;
+    height: 17%;
+    align-self: center;
+}
+
+/* Especificidad 004 */
+main > article > section > video {
+    width: 30%;
+    height: 30%;
+    border-radius: 1.5em;
+    align-self: center;
+}
+
+/* Especificidad 001 */
+h4 {
+    display: none;
+}

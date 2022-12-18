@@ -1,0 +1,51 @@
+/* Especificidad 002 */
+main > section {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding-left: 2em;
+    border-radius: 1.5em;
+    border-top: 0.1em solid #222a35;
+    border-left: 0.1em solid #222a35;
+    border-right: 0.1em solid #222a35;
+    border-bottom: 0.4em solid #222a35;
+    width: fit-content;
+    background-color: #f1f0f4;
+    /* color: definido en el body y heredado */
+}
+
+/* Especificidad 003 y 003 */
+main > section > h3, main > section > p {
+    margin: 0em;
+}
+
+/* Especificidad 003 */
+main > section > h3 {
+    align-self: flex-end;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(2) {
+    align-self: center;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(3) {
+    align-self: flex-end;
+    font-size: 1.2em;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(4) {
+    align-self: flex-end;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(5) {
+    align-self: flex-end;
+}
+
+/* Especificidad 003 */
+main > section > article {
+    margin-left: 8em;
+}

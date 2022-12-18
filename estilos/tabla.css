@@ -1,0 +1,62 @@
+/* Especificidad 001 */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0em 2em;
+    text-align: center;
+}
+
+/* Especificidad 001 */
+th {
+    background-color: #8497b0;
+    /* color: definido en el body y heredado */
+    border-bottom: 0.2em solid #222a35;
+    font-size: 1.2em;
+    height: 2em;
+    padding-bottom: 0.3em;
+    vertical-align: bottom;
+}
+
+/* Especificidad 011 */
+th:first-child {
+    width: 6em;
+    border-top-left-radius: 1.5em;
+}
+
+/* Especificidad 011 */
+th:nth-child(2) {
+    width: 8em;
+}
+
+/* Especificidad 011 */
+th:last-child {
+    width: 25em;
+    border-top-right-radius: 1.5em;
+}
+
+/* Especificidad 001 */
+tr {
+    background-color: #f1f0f4;
+    /* color: definido en el body y heredado */
+}
+
+/* Especificidad 012 */
+tr > td:first-child {
+    font-size: 1.2em;
+}
+
+/* Especificidad 013 */
+tr > td:nth-child(2) > p {
+    line-height: 0.3em;
+}
+
+/* Especificidad 023 */
+tr > td:last-child > p:first-child {
+    font-size: 1.2em;
+    line-height: 0.2em;
+}
+
+/* Especificidad 023 */
+tr > td:last-child > p:nth-child(2) {
+    font-weight: bold;
+}

@@ -1,0 +1,46 @@
+/* Especificidad 002 */
+main > section {
+    display: grid;
+    grid-template-columns: fit-content(5%) fit-content(25%) fit-content(75%);
+    grid-template-areas: 
+        'titulo titulo tareas'
+        'profesion profesion tareas'
+        'año tiempo tareas'
+        'ciudad ciudad tareas'
+        'comunidad comunidad tareas';
+}
+
+/* Especificidad 003 */
+main > section > h3 {
+    grid-area: titulo;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(2) {
+    grid-area: profesion;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(3) {
+    grid-area: año;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(4) {
+    grid-area: tiempo;
+}
+
+/* Especificidad 013 */
+main > section > p:nth-child(5) {
+    grid-area: ciudad;
+}
+
+/* Especificidad 013 */
+main > section > p:last-child {
+    grid-area: comunidad;
+}
+
+/* Especificidad 003 */
+main > section > article {
+    grid-area: tareas;
+}
