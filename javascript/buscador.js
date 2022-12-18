@@ -17,7 +17,7 @@ class Buscador{
                 contenido.set(self.urls[i], valor);
                 console.log(contenido)
             });
-        }console.log(contenido)
+        }
         return contenido;
     }
 
@@ -34,6 +34,7 @@ class Buscador{
         resultado.push(this.get_dato("pre", datos, 1));
         resultado.push(this.get_dato("pre", datos, 2));
         resultado.concat(this.get_main(datos));
+        console.log(resultado)
         return resultado.join(" ");
     }
 
