@@ -16,7 +16,7 @@ class Buscador{
                 valor = self.urls[i] === "index.html" ? self.get_todo_contenido(datos) : self.get_main(datos);
             });
             contenido.set(this.urls[i], valor);
-        }
+        }console.log(contenido)
         return contenido;
     }
 
