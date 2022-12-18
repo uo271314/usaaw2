@@ -69,12 +69,16 @@ class Buscador{
 
     get_dato(elemento, datos, posicion){
         let resultado = datos.split("<" + elemento + ">")[posicion];
+        console.log(elemento)
+        console.log(datos)
+        console.log(posicion)
+        console.log(resultado)
         resultado = resultado.split("</" + elemento + ">")[0];
         return resultado.toLowerCase();
     }
 
     buscar(){
-        let buscador = $("#buscador").value.toLowerCase();
+        let buscador = $("#buscador").val().toLowerCase();
         let num_educacion = this.contenido.get("index.html").split(buscador).length - 1;
         let num_experiencia = this.contenido.get("experiencia_profesional.html").split(buscador).length - 1;
         let num_aficiones = this.contenido.get("aficiones.html").split(buscador).length - 1;
