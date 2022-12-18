@@ -82,9 +82,9 @@ class Buscador{
         this.cargar_resultados(num_educacion, num_experiencia, num_aficiones, num_adicionales);
     }
 
-    cargar_resultados(educacion, experiencia, aficiones, adicionales){
+   cargar_resultados(educacion, experiencia, aficiones, adicionales){
         $("#resultados").remove();
-        $(" \
+        $("nav").after(" \
             <section id='resultados'> \
                 <ul>\
                     <li>Educación: " + educacion + " concidencia(s)</li>\
@@ -93,7 +93,7 @@ class Buscador{
                     <li>Datos adicionales: " + adicionales + " concidencia(s)</li>\
                 </ul>\
             </section> \
-        ").insertAfter($("nav"));
+        ");
     }
 
 }
