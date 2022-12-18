@@ -68,7 +68,7 @@ class Buscador{
     }
 
     get_dato(elemento, datos, posicion){
-        let resultado = datos.split("<" + elemento + ">")[posicion - 1];
+        let resultado = datos.split("<" + elemento + ">")[posicion];
         resultado = resultado.split("</" + elemento + ">")[0];
         return resultado.toLowerCase();
     }
