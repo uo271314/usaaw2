@@ -11,8 +11,9 @@ class Buscador{
         let valor = [];
         for(let i=0; i<this.urls.length; i++){
             valor = [];
-            $.get(this.urls[i], function(datos){
-                valor = this.urls[i] === "index.html" ? this.get_todo_contenido(datos) : this.get_main(datos);
+            let self = this;
+            $.get(self.urls[i], function(datos){
+                valor = self.urls[i] === "index.html" ? self.get_todo_contenido(datos) : self.get_main(datos);
             });
             contenido.set(this.urls[i], valor);
         }
