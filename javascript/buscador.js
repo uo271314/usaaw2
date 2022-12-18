@@ -46,16 +46,17 @@ class Buscador{
         let etiquetas = new Map();
         let etiqueta = "";
         let abierto = false;
+        let estado_anterior = false;
         let resultado = [];
         for(let i=0; i<datos.length; i++){
-            abierto = datos[i] != "/" && datos[i>0?i-1:0] == "<" || abierto && datos[i] != ">";
+            estado_anterior = new Boolean(abierto);
+            abierto = datos[i] != "/" && datos[i] != "<" && datos[i>0?i-1:0] == "<" || abierto && datos[i] != ">";
 
-            if (abierto && datos[i] == ">" || datos[i] == "<" && datos[i+1] == "/"){
-                if(abierto){
-                    let valor = etiquetas.get(etiqueta) === "undefined" ? 1 : etiquetas.get(etiqueta) + 1;
-                    etiquetas.set(etiqueta, valor);
-                    resultado.push(this.get_dato(etiqueta, datos, valor));
-                }
+            if(estado_anterior && !abierto){
+                let valor = etiquetas.get(etiqueta) === "undefined" ? 1 : etiquetas.get(etiqueta) + 1;
+                etiquetas.set(etiqueta, valor);
+                resultado.push(this.get_dato(etiqueta, datos, valor));
+
                 etiqueta = "";
                 abierto = false;
             }
