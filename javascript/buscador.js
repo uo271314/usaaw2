@@ -14,6 +14,7 @@ class Buscador{
             let self = this;
             $.get(self.urls[i], function(datos){
                 valor = self.urls[i] === "index.html" ? self.get_todo_contenido(datos) : self.get_main(datos);
+                console.log(valor)
                 contenido.set(self.urls[i], valor);
                 console.log(contenido)
             });
@@ -34,7 +35,6 @@ class Buscador{
         resultado.push(this.get_dato("pre", datos, 1));
         resultado.push(this.get_dato("pre", datos, 2));
         resultado.concat(this.get_main(datos));
-        console.log(resultado)
         return resultado.join(" ");
     }
 
@@ -71,7 +71,7 @@ class Buscador{
     get_dato(elemento, datos, posicion){
         let resultado = datos.split("<" + elemento + ">")[posicion];
         resultado = resultado.split("</" + elemento + ">")[0];
-        return resultado.toLowerCase();
+        return resultado.toLowerCase().replace(/(\r\n|\n|\r)/gm, "").trim();
     }
 
     buscar(){
