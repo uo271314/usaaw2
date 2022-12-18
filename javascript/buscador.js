@@ -10,13 +10,13 @@ class Buscador{
         let contenido = new Map();
         let valor = [];
         for(let i=0; i<this.urls.length; i++){
-            valor = [];
+            valor = "";
             let self = this;
             $.get(self.urls[i], function(datos){
                 valor = self.urls[i] === "index.html" ? self.get_todo_contenido(datos) : self.get_main(datos);
-                contenido.set(self.urls[i], valor);
+                contenido.set(this.urls[i], valor);
             });
-        }
+        } 
         return contenido;
     }
 
@@ -82,18 +82,18 @@ class Buscador{
         this.cargar_resultados(num_educacion, num_experiencia, num_aficiones, num_adicionales);
     }
 
-   cargar_resultados(educacion, experiencia, aficiones, adicionales){
+    cargar_resultados(educacion, experiencia, aficiones, adicionales){
         $("#resultados").remove();
-        $("nav").after(" \
+        $(" \
             <section id='resultados'> \
                 <ul>\
-                    <li>Educación: " + educacion + " concidencia(s)</li>\
-                    <li>Experiencia: " + experiencia + " concidencia(s)</li>\
-                    <li>Aficiones: " + aficiones + " concidencia(s)</li>\
-                    <li>Datos adicionales: " + adicionales + " concidencia(s)</li>\
+                    <li><p>Educación: " + educacion + " concidencia(s)</p></li>\
+                    <li><p>Experiencia: " + experiencia + " concidencia(s)</p></li>\
+                    <li><p>Aficiones: " + aficiones + " concidencia(s)</p></li>\
+                    <li><p>Datos adicionales: " + adicionales + " concidencia(s)</p></li>\
                 </ul>\
             </section> \
-        ");
+        ").insertAfter($("nav")[0]);
     }
 
 }
