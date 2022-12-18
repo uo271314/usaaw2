@@ -57,7 +57,7 @@ class Buscador{
             if(estado_anterior && !abierto && etiqueta.trim().length > 0){
                 let valor = etiquetas.get(etiqueta.trim()) === undefined ? 1 : etiquetas.get(etiqueta.trim()) + 1;
                 etiquetas.set(etiqueta.trim(), valor);
-                if(etiqueta.trim() in ["p", "h2", "h3", "h4", "th"])
+                if(["p", "h2", "h3", "h4", "th"].includes(etiqueta.trim()))
                     resultado.push(this.get_dato(etiqueta.trim(), datos, valor));
 
                 etiqueta = "";
