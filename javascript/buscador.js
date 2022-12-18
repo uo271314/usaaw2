@@ -25,10 +25,10 @@ class Buscador{
         resultado.push("email");
         resultado.push("teléfono");
         resultado.push("ubicación");
-        resultado.push(this.get_dato("p", datos, 4));
         resultado.push(this.get_dato("p", datos, 5));
-        resultado.push(this.get_dato("h2", datos, 5));
         resultado.push(this.get_dato("p", datos, 6));
+        resultado.push(this.get_dato("h2", datos, 5));
+        resultado.push(this.get_dato("p", datos, 7));
         resultado.push(this.get_dato("h2", datos, 6));
         resultado.push(this.get_dato("pre", datos, 1));
         resultado.push(this.get_dato("pre", datos, 2));
@@ -60,10 +60,8 @@ class Buscador{
                 etiqueta = "";
                 abierto = false;
             }
-            else{
-                abierto = true;
+            if (abierto)
                 etiqueta += datos[i];
-            }
         }
         return resultado;
     }
