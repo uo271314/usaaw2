@@ -25,13 +25,10 @@ class Buscador{
         resultado.push("email");
         resultado.push("teléfono");
         resultado.push("ubicación");
-        resultado.push(this.get_dato("p", datos, 5));
-        resultado.push(this.get_dato("p", datos, 6));
-        resultado.push(this.get_dato("h2", datos, 5));
-        resultado.push(this.get_dato("p", datos, 7));
-        resultado.push(this.get_dato("h2", datos, 6));
-        resultado.push(this.get_dato("pre", datos, 1));
-        resultado.push(this.get_dato("pre", datos, 2));
+        resultado.push(this.get_dato("p", datos, 1));
+        resultado.push(this.get_dato("p", datos, 2));
+        resultado.push(this.get_dato("p", datos, 3));
+        resultado.push(this.get_dato("p", datos, 4));
         resultado.concat(this.get_main(datos));
         return resultado.join(" ");
     }
@@ -55,7 +52,7 @@ class Buscador{
             if(estado_anterior && !abierto && etiqueta.trim().length > 0){
                 let valor = etiquetas.get(etiqueta.trim()) === undefined ? 1 : etiquetas.get(etiqueta.trim()) + 1;
                 etiquetas.set(etiqueta.trim(), valor);
-                if(["p", "h2", "h3", "h4", "th"].includes(etiqueta.trim()))
+                if(["p", "h2", "h3", "h4", "th", "pre"].includes(etiqueta.trim()))
                     resultado.push(this.get_dato(etiqueta.trim(), datos, valor));
 
                 etiqueta = "";
@@ -80,6 +77,7 @@ class Buscador{
         let num_aficiones = this.contenido.get("aficiones.html").split(buscador).length - 1;
         let num_adicionales = this.contenido.get("datos_adicionales.html").split(buscador).length - 1;
         this.cargar_resultados(num_educacion, num_experiencia, num_aficiones, num_adicionales);
+        return false;
     }
 
     cargar_resultados(educacion, experiencia, aficiones, adicionales){
@@ -87,13 +85,19 @@ class Buscador{
         $(" \
             <section id='resultados'> \
                 <ul>\
-                    <li><p>Educación: " + educacion + " concidencia(s)</p></li>\
-                    <li><p>Experiencia: " + experiencia + " concidencia(s)</p></li>\
-                    <li><p>Aficiones: " + aficiones + " concidencia(s)</p></li>\
-                    <li><p>Datos adicionales: " + adicionales + " concidencia(s)</p></li>\
+                    <li><p>Educación: " + educacion + " concidencia(s)</p><a href='index.html'>ver educación</a></li>\
+                    <li><p>Experiencia: " + experiencia + " concidencia(s)</p><a href='experiencia_profesional.html'>ver experiencia</a></li>\
+                    <li><p>Aficiones: " + aficiones + " concidencia(s)</p><a href='aficiones.html'>ver aficiones</a></li>\
+                    <li><p>Datos adicionales: " + adicionales + " concidencia(s)</p><a href='datos_adicionales.html'>ver más datos</a></li>\
                 </ul>\
+                <button onclick='buscador.cerrar_resultados()'>Cerrar</button> \
             </section> \
-        ").insertAfter($("nav")[0]);
+        ").insertAfter($("#contenedor_buscador")[0]);
+    }
+
+    cerrar_resultados(){
+        $("#resultados").remove();
+        $("#buscador").val("");
     }
 
 }
