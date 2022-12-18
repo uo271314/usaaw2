@@ -83,10 +83,10 @@ class Buscador{
     }
 
    cargar_resultados(educacion, experiencia, aficiones, adicionales){
-        console.log(num_educacion)
-        console.log(num_experiencia)
-        console.log(num_aficiones)
-        console.log(num_adicionales)
+        console.log(educacion)
+        console.log(experiencia)
+        console.log(aficiones)
+        console.log(adicionales)
         $("#resultados").remove();
         $("nav").after(" \
             <section id='resultados'> \
