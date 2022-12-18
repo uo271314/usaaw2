@@ -8,9 +8,10 @@
         <meta name="keywords" content="Presentación, Personal, Máster, HTML, Experiencia" />
         <meta name="viewport" content="width=device-width, initial scale=1.0" />
         <link rel="stylesheet" type="text/css" href="estilos/estilo_base.css" />
-        <link rel="stylesheet" type="text/css" href="estilos/layout_base.css" />
         <link rel="stylesheet" type="text/css" href="estilos/tarjeta_experiencia_profesional.css" />
-        <link rel="stylesheet" type="text/css" href="estilos/tarjeta_experiencia_profesional_layout.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="./javascript/buscador.js"></script>
         <title>Web personal - Laura Delgado</title>
     </head>
 
@@ -18,7 +19,13 @@
         <!-- Grupo introductorio - Nombre y profesión -->
         <header>
             <h1>Laura Delgado Álvarez</h1>
+            <img src="multimedia/foto_laura.JPG" alt="Foto Laura Delgado" />
             <p>Ingeniera Informática</p>
+            <article>
+                <p>+34 678 37 68 44</p>
+                <p>uo271314@uniovi.es</p>
+                <p>Oviedo, Asturias ESP</p>
+            </article>
         </header>
 
         <!-- Barra de navegación que conecta los documentos -->
@@ -29,76 +36,25 @@
             <a href="datos_adicionales.html" accesskey="D" tabindex="4">Datos adicionales</a>
         </nav>
 
-        <!-- Grupo de presentación personal -->
-        <section>
-            <h2>Presentación</h2>
-            <img src="multimedia/foto_laura.JPG" alt="Foto Laura Delgado" />
-
-            <!-- Bloque de datos de contacto -->
-            <article>
-                <h2>CONTACTO</h2>
-                <ul>
-                    <li>
-                        <img src="multimedia/icono_telefono.png" alt="Icono teléfono" />
-                        <p>+34 678 37 68 44</p>
-                    </li>
-                    <li>
-                        <img src="multimedia/icono_email.png" alt="Icono email" />
-                        <p>uo271314@uniovi.es</p>
-                    </li>
-                    <li>
-                        <img src="multimedia/icono_ubicacion.png" alt="Icono ubicación" />
-                        <p>Oviedo, Asturias ESP</p>
-                    </li>
-                </ul>
-            </article>
-
-            <!-- Grupo de informacion personal -->
-            <section>
-                <h2>Información personal</h2>
-                <!-- Bloque con una descripcion personal -->
-                <article>
-                    <h2>QUIÉN SOY</h2>
-                    <p>Alumna de primer curso en el Máster de Ingeniería Web, Universidad de Oviedo.</p>
-                    <p>
-                        Mis motivaciones relativas al trabajo son ayudar o hacer más sencilla la vida de los demás.
-                        Además, considero fundamental la realización de código limpio y organizado que pueda ser
-                        fácilmente comprendido y mantenido.
-                    </p>
-                </article>
-
-                <!-- Bloque con los lenguajes utilizados  -->
-                <article>
-                    <h2>LENGUAJES</h2>
-                    <p>JavaScript, Python, Java, C, C#, C++, PHP, HTML, CSS, XML</p>
-                </article>
-
-                <!-- Bloque con los niveles en idiomas -->
-                <article>
-                    <h2>IDIOMAS</h2>
-                    <ul>
-                        <li>
-                            <pre>Español:   Natal</pre>
-                        </li>
-                        <li>
-                            <pre>Inglés:   Intermedio</pre>
-                        </li>
-                    </ul>
-                </article>
-            </section>
-        </section>
+        <!-- Buscador -->
+        <article id="contenedor_buscador">
+            <input id="buscador" type="text" name="buscador" placeholder="Busca en mi CV..."/>
+            <button type="button" onclick="buscador.buscar()">Buscar</button>
+        </article>
 
         <!-- Infomacion principal de la pagina [Experiencia laboral] -->
         <main>
             <h2>EXPERIENCIA PROFESIONAL</h2>
 
             <section>
-                <h3>NEA MASTER</h3>
-                <p>Programadora</p>
-                <p>2022</p>
-                <p>(5 meses)</p>
-                <p>Oviedo</p>
-                <p>Asturias, ESP</p>
+                <article>
+                    <h3>NEA MASTER</h3>
+                    <p>Programadora</p>
+                    <p>2022</p>
+                    <p>(5 meses)</p>
+                    <p>Oviedo</p>
+                    <p>Asturias, ESP</p>
+                </article>
 
                 <article>
                     <h4>Tareas realizadas:</h4>
