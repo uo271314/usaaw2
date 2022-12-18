@@ -79,14 +79,14 @@ class Buscador{
         let num_experiencia = this.contenido.get("experiencia_profesional.html").split(buscador).length - 1;
         let num_aficiones = this.contenido.get("aficiones.html").split(buscador).length - 1;
         let num_adicionales = this.contenido.get("datos_adicionales.html").split(buscador).length - 1;
-        console.log(num_educacion)
-        console.log(num_experiencia)
-        console.log(num_aficiones)
-        console.log(num_adicionales)
         this.cargar_resultados(num_educacion, num_experiencia, num_aficiones, num_adicionales);
     }
 
    cargar_resultados(educacion, experiencia, aficiones, adicionales){
+        console.log(num_educacion)
+        console.log(num_experiencia)
+        console.log(num_aficiones)
+        console.log(num_adicionales)
         $("#resultados").remove();
         $("nav").after(" \
             <section id='resultados'> \
