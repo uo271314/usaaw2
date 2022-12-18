@@ -52,7 +52,7 @@ class Buscador{
             estado_anterior = new Boolean(abierto);
             abierto = datos[i] != "/" && datos[i] != "<" && datos[i>0?i-1:0] == "<" || abierto && datos[i] != ">";
 
-            if(estado_anterior && !abierto){
+            if(estado_anterior && !abierto && etiqueta.trim().length > 0){
                 let valor = etiquetas.get(etiqueta) === "undefined" ? 1 : etiquetas.get(etiqueta) + 1;
                 etiquetas.set(etiqueta, valor);
                 resultado.push(this.get_dato(etiqueta, datos, valor));
