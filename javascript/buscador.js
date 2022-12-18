@@ -48,7 +48,7 @@ class Buscador{
         let abierto = false;
         let resultado = [];
         for(let i=0; i<datos.length; i++){
-            abierto = datos[i] == "<" && datos[i+1] != "/" || abierto && datos[i] != ">";
+            abierto = datos[i] != "/" && datos[i>0?i-1:0] == "<" || abierto && datos[i] != ">";
 
             if (abierto && datos[i] == ">" || datos[i] == "<" && datos[i+1] == "/"){
                 if(abierto){
