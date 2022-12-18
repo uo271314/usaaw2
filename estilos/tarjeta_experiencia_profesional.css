@@ -1,51 +1,35 @@
-/* Especificidad 002 */
 main > section {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
     padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1.3em;
+    padding-bottom: 1.32m;
     border-radius: 1.5em;
-    border-top: 0.1em solid #222a35;
-    border-left: 0.1em solid #222a35;
-    border-right: 0.1em solid #222a35;
-    border-bottom: 0.4em solid #222a35;
+    border-top: 0.1em solid #ef4c00;
+    border-left: 0.1em solid #ef4c00;
+    border-right: 0.1em solid #ef4c00;
+    border-bottom: 0.4em solid #ef4c00;
     width: fit-content;
-    background-color: #f1f0f4;
-    /* color: definido en el body y heredado */
+    background-color: #342e37;
+    color: #ffffff;
+    display: flex;
+    max-width: 70%;
 }
 
-/* Especificidad 003 y 003 */
-main > section > h3, main > section > p {
-    margin: 0em;
+main > section > article > h3{
+    color: #ef4c00;
+    font-size: 1.3em;
 }
 
-/* Especificidad 003 */
-main > section > h3 {
-    align-self: flex-end;
+main > section > article > h3, main > section > article > p {
+    margin: 0.3em;
+    vertical-align: center;
 }
 
-/* Especificidad 013 */
-main > section > p:nth-child(2) {
-    align-self: center;
-}
-
-/* Especificidad 013 */
-main > section > p:nth-child(3) {
-    align-self: flex-end;
-    font-size: 1.2em;
-}
-
-/* Especificidad 013 */
-main > section > p:nth-child(4) {
-    align-self: flex-end;
-}
-
-/* Especificidad 013 */
-main > section > p:nth-child(5) {
-    align-self: flex-end;
-}
-
-/* Especificidad 003 */
-main > section > article {
-    margin-left: 8em;
+main > section > article:nth-child(2) {
+    margin-bottom: 1.3em;
+    padding-left: 5%;
+    width: 70%;
 }

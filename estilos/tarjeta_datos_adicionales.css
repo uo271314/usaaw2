@@ -1,27 +1,33 @@
-/* Especificidad 002 */
 main > section {
-    background-color: #f1f0f4; 
-    /* color: definido en el body y heredado */
+    background-color: #342e37; 
+    color: #ffffff;
     border-radius: 1.5em;
-    border-top: 0.1em solid #222a35;
-    border-right: 0.1em solid #222a35;
-    border-left: 0.1em solid #222a35;
-    border-bottom: 0.4em solid #222a35;
+    border-top: 0.1em solid #ef4c00;
+    border-left: 0.1em solid #ef4c00;
+    border-right: 0.1em solid #ef4c00;
+    border-bottom: 0.4em solid #ef4c00;
     padding-left: 1.5em;
     padding-right: 1.5em;
-    width: fit-content;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2em;
 }
 
-/* Tratamiento de la lista */
-/* Especificidad 004 */
+main > section:nth-of-type(2), main > section:nth-of-type(3){
+    padding-bottom: 1.4em;
+}
+
+main > section:nth-of-type(2) > p, main > section:nth-of-type(3) > p{
+    padding-left: 2.6em;
+    padding-right: 2em;
+}
+
 main > section > ul > li {
     list-style-type: none;
     padding-bottom: 0.8em;
 }
 
-/* Especificidad 004 */
 main > section > ul > li > * {
     display: inline;
     vertical-align: middle;

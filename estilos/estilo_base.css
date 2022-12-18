@@ -1,22 +1,18 @@
-/* Especificidad 001 */
 body {
     font-family: Cambria, Georgia, 'Times New Roman', serif;
     margin: 0em;
-    background-color: #ffffff;
+    background-color: #fafffd;
     color: #000000;
 }
 
-/* Grupo introductorio */
-/* Especificidad 001 */
 header {
-    background-color: #8497b0;
-    color: #222a35;
+    background-color: #342e37;
+    color: #ffffff;
     padding-bottom: 1.2em;
     padding-top: 1.7em;
     text-align: center;
 }
 
-/* Especificidad 002 */
 header > h1 {
     font-size: 2.5em;
     border-bottom: 0.01em solid #ffffff;
@@ -25,125 +21,77 @@ header > h1 {
     margin: 0 auto;
 }
 
-/* Especificidad 002 */
 header > p {
     font-size: 1.1em;
     color: #ffffff;
-    /* background-color: definido en el body y heredado */
 }
 
-/* Barra de navegación */
-/* Especificidad 001 */
-nav {
-    background-color: #222a35;
+header > p:first-of-type {
+    font-weight: bolder;
+}
+
+header > img {
+    border: 0.2em solid #3c91e6;
+    border-radius: 20em;
+    margin-top: 1.3em;
+}
+
+
+nav, nav + article {
+    background-color: #3c91e6;
     color: #ffffff;
     text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
     padding-top: 0.9em;
+    padding-bottom: 0.9em;
 }
 
-/* Especificidad 002 */
 nav > a {
     color: #ffffff;
-    /* background-color: definido en el body y heredado */
     padding-right: 0.8em;
     padding-left: 0.8em;
     border-right: 0.05em solid #ffffff;
     vertical-align: middle;
+    line-height: 3em;
 }
 
-/* Especificidad 012 */
 nav > a:last-child {
     border: none;
 }
 
-/* Grupo de presentación personal */
-/* Especificidad 002 */
-body > section {
-    background-color: #f1f0f4;
-    /* color: definido en el body y heredado */
-    padding-top: 1.7em;
+button {
+    background-color: #ef4c00;
+    color: #ffffff;
+    padding: 0.6em;
+    border-radius: 1.5em;
 }
 
-/* Especificidad 002 */
-section > img {
-    border: 0.6em solid #222a35;
-    border-radius: 20em;
-    display: block;
-    margin: 0 auto;
+nav + article > input {
+    padding: 0.4em;
 }
 
-    /* Bloque de datos de contacto */
-/* Especificidad 003 */    
-img ~ article > ul {
-    padding-left: 10%;
-    padding-top: 0.9em;
-    padding-bottom: 0.5em;
-}
-
-/* Especificidad 004 */
-img ~ article > ul > li {
-    list-style-type: none;
-    padding-bottom: 0.5em;
-}
-
-/* Especificidad 004 */
-img ~ article > ul > li > * {
-    display: inline;
-    vertical-align: middle;
-}
-
-/* Especificidad 005 */
-img ~ article > ul > li > img {
-    width: 12%;
-    height: 12%;
-}
-
-    /* Grupo de información personal */
-/* Especificidad 002 */    
-article ~ section  {
-    padding-left: 8%;
-    padding-right: 8%;
-    text-align: justify;
-} 
-
-/* Especificidad 003 */
-article ~ section > article {
-    padding-top: 0.7em;
-} 
-
-/* Especificidad 004 */
-article ~ section > article > h2 {
+#resultados{
+    border: 1.2em solid #3c91e6;
+    padding: 1.2em;
     text-align: center;
-    letter-spacing: 0.45em;
-}    
-
-/* Especificidad 004 */
-article ~ section > article > ul {
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0em;
-    font-size: 1.1em;
 }
 
-/* Informacion principal */
-/* Especificidad 001 */
-main {
+#resultados > ul > li{
+    list-style-type: none;
+}
+
+main > h2 {
     margin-left: 3em;
-    margin-top: 0.8em;
+    margin-top: 1.5em;
+    font-size: 1.8em;
 }
 
-/* Pie de pagina */
-/* Especificidad 001 */
 footer {
-    background-color: #222a35;
+    background-color: #342e37;
     color: #ffffff;
     text-align: center;
     padding-top: 0.7em;
     padding-bottom: 0.7em;
-}
-
-/* Ocultar elementos */
-/* Especificidad 003 y 004 */
-body > section > h2, body > section > article > h2 {
-    display: none;
+    margin-top: 3em;
 }
