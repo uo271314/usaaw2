@@ -24,20 +24,20 @@ class Buscador{
         resultado.push("email");
         resultado.push("teléfono");
         resultado.push("ubicación");
-        resultado.push(this.get_dato("p", 4));
-        resultado.push(this.get_dato("p", 5));
-        resultado.push(this.get_dato("h2", 5));
-        resultado.push(this.get_dato("p", 6));
-        resultado.push(this.get_dato("h2", 6));
-        resultado.push(this.get_dato("pre", 1));
-        resultado.push(this.get_dato("pre", 2));
+        resultado.push(this.get_dato("p", datos, 4));
+        resultado.push(this.get_dato("p", datos, 5));
+        resultado.push(this.get_dato("h2", datos, 5));
+        resultado.push(this.get_dato("p", datos, 6));
+        resultado.push(this.get_dato("h2", datos, 6));
+        resultado.push(this.get_dato("pre", datos, 1));
+        resultado.push(this.get_dato("pre", datos, 2));
         resultado.concat(this.get_main(datos));
         return resultado.join(" ");
     }
 
     get_main(datos){
-        let datos = this.get_dato("main");
-        let resultado = this.lee_etiquetas(datos);
+        let contenido = this.get_dato("main", datos, 1);
+        let resultado = this.lee_etiquetas(contenido);
         return resultado.join(" ");
     }
 
